@@ -1,0 +1,25 @@
+<nav class="flex flex-col w-56 h-full shrink-0 border-r border-gray-200 bg-white">
+    <div class="p-4 border-b border-gray-200">
+        <span class="font-semibold text-gray-900">YOURA Sleep</span>
+    </div>
+    <ul class="flex flex-col p-3 gap-1">
+        <li>
+            <%= link_to root_path, class: "block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" do %>
+            Home
+            <% end %>
+        </li>
+        <li>
+            <%= link_to oura_raw_payloads_path, class: "block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" do %>
+            Oura data
+            <% end %>
+        </li>
+        <li>
+            <span class="block rounded-md px-3 py-2 text-sm text-gray-400 cursor-not-allowed">Sleep</span>
+        </li>
+    </ul>
+    <ul class="flex flex-col p-3 gap-1">
+        <li>
+        </li>
+    </ul>
+
+</nav>
