@@ -1,0 +1,24 @@
+<div class="max-w-4xl mx-auto p-6">
+    <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-semibold">Oura Raw Payloads</h1>
+
+        <div class="flex gap-2">
+            <%= link_to "Connect Oura", connect_oura_path, class: "px-4 py-2 rounded bg-black text-white" %>
+            <%= button_to "Disconnect", disconnect_oura_path, method: :delete, class: "px-4 py-2 rounded border" %>
+        </div>
+    </div>
+
+    <div class="mt-6 space-y-3">
+        <% @payloads.each do |p| %>
+        <%= link_to oura_raw_payload_path(p), class: "block p-4 rounded border hover:bg-gray-50" do %>
+        <div class="flex justify-between">
+            <div class="font-medium"><%= p.data_type %></div>
+            <div class="text-sm text-gray-600"><%= p.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+        </div>
+        <div class="text-sm text-gray-600">
+            Range: <%= p.start_date %> → <%= p.end_date %>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+</div>
